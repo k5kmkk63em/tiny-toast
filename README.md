@@ -34,6 +34,7 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/hello-world?version=5) (plac
 - `dismiss(id)` removes a toast and clears its timer.
 - `pause(id)` and `resume(id)` stop and restart the dismiss timer; the component calls them on `mouseenter`/`mouseleave` and `focusin`/`focusout`.
 - `toasts` is a readable store of the current list.
+- `createViewport(store, limit = 3)` returns a readable store that shows at most `limit` toasts and queues the rest. `<ToastViewport {limit}>` wires that to `toasts` for you and is the recommended list component.
 
 Resuming currently restarts the full duration instead of the remaining time. That is a known gap, not a design decision.
 
@@ -42,6 +43,8 @@ Resuming currently restarts the full duration instead of the remaining time. Tha
 ```
 src/lib/toast.ts     store, timers, pause/resume
 src/lib/Toast.svelte single toast, events only
+src/lib/viewport.ts  visible limit and queue
+src/lib/ToastViewport.svelte capped list
 src/lib/index.ts     public exports
 ```
 
