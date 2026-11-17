@@ -1,0 +1,27 @@
+{
+  "name": "tiny-toast",
+  "version": "0.1.0",
+  "description": "Accessible Svelte toast store with pause-on-hover timers",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "src/lib"
+  ],
+  "svelte": "src/lib/index.ts",
+  "types": "src/lib/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/lib/index.ts",
+      "svelte": "./src/lib/index.ts"
+    }
+  },
+  "scripts": {
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "svelte": "^4.2.19",
+    "svelte-check": "^3.8.6",
+    "tslib": "^2.7.0",
+    "typescript": "^5.5.4"
+  }
+}
